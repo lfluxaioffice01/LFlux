@@ -30,7 +30,7 @@ def test_contact_success(mock_insert: MagicMock, mock_email: MagicMock) -> None:
     mock_email.assert_called_once_with(CONTACT_PAYLOAD)
 
 
-@patch("app.main.send_contact_notification", side_effect=Exception("SMTP failed"))
+@patch("app.main.send_contact_notification", side_effect=Exception("Resend failed"))
 @patch("app.main.insert_inquiry")
 def test_contact_email_failure_still_succeeds(
     mock_insert: MagicMock, mock_email: MagicMock

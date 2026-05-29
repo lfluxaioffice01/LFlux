@@ -14,7 +14,7 @@ from fastapi.templating import Jinja2Templates
 from postgrest.exceptions import APIError
 
 from app.admin_routes import router as admin_router
-from app.gmail_notify import send_contact_notification
+from app.email_notify import send_contact_notification
 from app.schemas import ContactIn
 from app.supabase_client import get_postgrest, get_visible_portfolio, insert_inquiry
 
@@ -72,7 +72,7 @@ async def submit_contact(payload: ContactIn) -> JSONResponse:
     try:
         send_contact_notification(data)
     except Exception as exc:
-        logger.exception("Gmail notification failed: %s", exc)
+        logger.exception("Email notification failed: %s", exc)
 
     return JSONResponse(
         content={"success": True, "message": CONTACT_SUCCESS_MESSAGE},
