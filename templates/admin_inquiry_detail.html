@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LFlux Admin | 문의 #{{ inquiry.id }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='admin.css') }}">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <div class="admin-header__inner">
+      <a href="/admin" class="admin-header__logo">LFlux Admin</a>
+      <nav class="admin-nav">
+        <a href="/admin" class="admin-nav__link">대시보드</a>
+        <a href="/admin/inquiries" class="admin-nav__link admin-nav__link--active">문의 목록</a>
+        <a href="/admin/portfolio" class="admin-nav__link">포트폴리오</a>
+        <a href="/" class="admin-nav__link" target="_blank" rel="noopener">사이트 보기</a>
+        <a href="/admin/logout" class="admin-nav__link admin-nav__link--muted">로그아웃</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main container">
+    <div class="admin-page-head admin-page-head--row">
+      <div>
+        <a href="/admin/inquiries" class="admin-back">← 목록으로</a>
+        <h1>문의 상세 #{{ inquiry.id }}</h1>
+        <p><span class="admin-badge admin-badge--{{ inquiry.status }}">{{ inquiry.status_label }}</span></p>
+      </div>
+    </div>
+
+    <div class="admin-detail-grid">
+      <section class="admin-panel">
+        <h2>문의 정보</h2>
+        <dl class="admin-dl">
+          <div><dt>이름</dt><dd>{{ inquiry.name }}</dd></div>
+          <div><dt>이메일</dt><dd><a href="mailto:{{ inquiry.email }}">{{ inquiry.email }}</a></dd></div>
+          <div><dt>연락처</dt><dd>{{ inquiry.phone or '-' }}</dd></div>
+          <div><dt>업종</dt><dd>{{ inquiry.industry or '-' }}</dd></div>
+          <div><dt>예산</dt><dd>{{ inquiry.budget or '-' }}</dd></div>
+          <div><dt>관심 서비스</dt><dd>{{ inquiry.service_interest or '-' }}</dd></div>
+          <div><dt>접수일</dt><dd>{{ inquiry.created_at_display }}</dd></div>
+          <div><dt>상태</dt><dd>{{ inquiry.status_label }}</dd></div>
+        </dl>
+      </section>
+
+      <section class="admin-panel">
+        <h2>문의 내용</h2>
+        <div class="admin-message">{{ inquiry.message }}</div>
+      </section>
+    </div>
+
+    <section class="admin-panel admin-panel--actions">
+      <h2>상태 변경</h2>
+      <div class="admin-status-actions">
+        <form method="post" action="/admin/inquiries/{{ inquiry.id }}/status">
+          <input type="hidden" name="status" value="new">
+          <button type="submit" class="admin-btn admin-btn--outline" {% if inquiry.status == 'new' %}disabled{% endif %}>신규로 표시</button>
+        </form>
+        <form method="post" action="/admin/inquiries/{{ inquiry.id }}/status">
+          <input type="hidden" name="status" value="checked">
+          <button type="submit" class="admin-btn admin-btn--outline" {% if inquiry.status == 'checked' %}disabled{% endif %}>확인됨으로 표시</button>
+        </form>
+        <form method="post" action="/admin/inquiries/{{ inquiry.id }}/status">
+          <input type="hidden" name="status" value="done">
+          <button type="submit" class="admin-btn admin-btn--primary" {% if inquiry.status == 'done' %}disabled{% endif %}>완료로 표시</button>
+        </form>
+        <a href="/admin/inquiries" class="admin-btn admin-btn--ghost">목록으로</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

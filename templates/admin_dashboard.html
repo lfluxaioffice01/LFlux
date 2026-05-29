@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LFlux Admin | 대시보드</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='admin.css') }}">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <div class="admin-header__inner">
+      <a href="/admin" class="admin-header__logo">LFlux Admin</a>
+      <nav class="admin-nav">
+        <a href="/admin" class="admin-nav__link admin-nav__link--active">대시보드</a>
+        <a href="/admin/inquiries" class="admin-nav__link">문의 목록</a>
+        <a href="/admin/portfolio" class="admin-nav__link">포트폴리오</a>
+        <a href="/" class="admin-nav__link" target="_blank" rel="noopener">사이트 보기</a>
+        <a href="/admin/logout" class="admin-nav__link admin-nav__link--muted">로그아웃</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main container">
+    <div class="admin-page-head">
+      <h1>대시보드</h1>
+      <p>상담 문의 현황을 한눈에 확인하세요.</p>
+    </div>
+
+    <div class="admin-stats">
+      <div class="admin-stat-card">
+        <span class="admin-stat-card__label">전체 문의</span>
+        <strong class="admin-stat-card__value">{{ stats.total }}</strong>
+      </div>
+      <div class="admin-stat-card">
+        <span class="admin-stat-card__label">오늘 문의</span>
+        <strong class="admin-stat-card__value">{{ stats.today }}</strong>
+      </div>
+      <div class="admin-stat-card admin-stat-card--accent">
+        <span class="admin-stat-card__label">신규 문의</span>
+        <strong class="admin-stat-card__value">{{ stats.new }}</strong>
+      </div>
+      <div class="admin-stat-card admin-stat-card--success">
+        <span class="admin-stat-card__label">완료 문의</span>
+        <strong class="admin-stat-card__value">{{ stats.completed }}</strong>
+      </div>
+    </div>
+
+    <section class="admin-panel">
+      <div class="admin-panel__head">
+        <h2>최근 문의 5건</h2>
+        <a href="/admin/inquiries" class="admin-btn admin-btn--outline admin-btn--sm">전체 보기</a>
+      </div>
+      {% if recent_inquiries %}
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>상태</th>
+              <th>이름</th>
+              <th>연락처</th>
+              <th>접수일</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in recent_inquiries %}
+            <tr>
+              <td>#{{ row.id }}</td>
+              <td><span class="admin-badge admin-badge--{{ row.status }}">{{ row.status_label }}</span></td>
+              <td>{{ row.name }}</td>
+              <td>{{ row.phone or '-' }}</td>
+              <td>{{ row.created_at_display }}</td>
+              <td><a href="/admin/inquiries/{{ row.id }}" class="admin-btn admin-btn--sm admin-btn--outline">상세</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <p class="admin-empty">아직 접수된 문의가 없습니다.</p>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

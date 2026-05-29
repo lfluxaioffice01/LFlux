@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LFlux — AI · 웹 · 마케팅으로 비즈니스 성장을 자동화합니다.">
+  <title>LFlux | 비즈니스 자동화의 시작</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">LFlux</a>
+      <button class="nav__toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#home" class="nav__link">홈</a></li>
+        <li><a href="#services" class="nav__link">서비스</a></li>
+        <li><a href="#pricing" class="nav__link">요금</a></li>
+        <li><a href="#portfolio" class="nav__link">포트폴리오</a></li>
+        <li><a href="#contact" class="nav__link">문의</a></li>
+        <li><a href="#contact" class="nav__cta">무료 상담</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero__bg"></div>
+      <div class="container hero__content">
+        <p class="hero__tagline reveal">AI · 웹 · 마케팅으로 비즈니스 성장을 자동화합니다.</p>
+        <h1 class="hero__title reveal">비즈니스 자동화의 시작</h1>
+        <p class="hero__subtitle reveal">
+          AI 자동화, 홈페이지 제작, 온라인 홍보를 통해 고객의 시간을 절약하고<br class="hide-mobile">
+          매출을 성장시키는 디지털 파트너
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#contact" class="btn btn--primary">무료 상담 신청</a>
+          <a href="#services" class="btn btn--outline">서비스 보기</a>
+        </div>
+      </div>
+      <div class="hero__scroll">
+        <span>스크롤</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Why LFlux -->
+    <section class="section section--why" id="why">
+      <div class="why__decor" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">핵심 가치</span>
+          <h2 class="section__title">왜 LFlux인가?</h2>
+          <p class="section__desc">웹 제작, 온라인 홍보, AI 자동화를 한 번에 관리합니다.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card reveal">
+            <div class="why-card__icon-wrap">
+              <div class="why-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                  <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                  <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                  <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="why-card__title">원스톱 서비스</h3>
+            <p class="why-card__desc">AI, 웹, 마케팅을 한 곳에서 제공합니다.</p>
+          </article>
+          <article class="why-card reveal">
+            <div class="why-card__icon-wrap">
+              <div class="why-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+                  <path d="m4.93 4.93 2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="why-card__title">맞춤형 솔루션</h3>
+            <p class="why-card__desc">고객의 업종과 상황에 맞는 최적의 전략을 제안합니다.</p>
+          </article>
+          <article class="why-card reveal">
+            <div class="why-card__icon-wrap">
+              <div class="why-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                  <path d="M3 3v5h5M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+                  <path d="M16 16h5v5"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="why-card__title">업무 자동화</h3>
+            <p class="why-card__desc">반복 업무를 줄이고 상담·문서·운영 프로세스를 효율화합니다.</p>
+          </article>
+          <article class="why-card reveal">
+            <div class="why-card__icon-wrap">
+              <div class="why-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="why-card__title">빠른 대응</h3>
+            <p class="why-card__desc">직접 소통하며 신속하게 수정과 운영을 지원합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section--light" id="services">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">서비스</span>
+          <h2 class="section__title">성장을 위한 통합 디지털 솔루션</h2>
+          <p class="section__desc">AI부터 웹, 마케팅까지 — 비즈니스에 필요한 모든 것을 한곳에서.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 0 1 4 4v1h1a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V10a3 3 0 0 1 3-3h1V6a4 4 0 0 1 4-4z"/><circle cx="12" cy="14" r="2"/></svg>
+            </div>
+            <h3 class="service-card__title">AI 자동화</h3>
+            <ul class="service-card__list">
+              <li>AI 상담봇</li>
+              <li>업무 자동화</li>
+              <li>문서 자동화</li>
+              <li>맞춤형 AI 구축</li>
+            </ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <h3 class="service-card__title">홈페이지 제작</h3>
+            <ul class="service-card__list">
+              <li>기업 홈페이지</li>
+              <li>학원 홈페이지</li>
+              <li>쇼핑몰 제작</li>
+              <li>랜딩페이지 제작</li>
+            </ul>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 class="service-card__title">온라인 홍보</h3>
+            <ul class="service-card__list">
+              <li>블로그 운영</li>
+              <li>SNS 운영</li>
+              <li>콘텐츠 제작</li>
+              <li>온라인 홍보 운영</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section section--gray" id="pricing">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">요금</span>
+          <h2 class="section__title">투명한 요금 체계</h2>
+          <p class="section__desc">비즈니스 규모에 맞는 플랜을 선택하세요.</p>
+        </div>
+
+        <div class="pricing-block reveal">
+          <h3 class="pricing-block__title">온라인 홍보 운영</h3>
+          <div class="pricing-grid pricing-grid--3">
+            <div class="price-card">
+              <span class="price-card__tier">스타터</span>
+              <div class="price-card__price">
+                <span class="price-card__label">초기 세팅</span>
+                <strong>20만원</strong>
+              </div>
+              <div class="price-card__price">
+                <span class="price-card__label">월 운영비</span>
+                <strong>10만원</strong>
+              </div>
+              <ul class="price-card__features">
+                <li>블로그 월 2회</li>
+                <li>SNS 월 2~4회</li>
+              </ul>
+            </div>
+            <div class="price-card price-card--featured">
+              <span class="price-card__badge">인기</span>
+              <span class="price-card__tier">스탠다드</span>
+              <div class="price-card__price">
+                <span class="price-card__label">초기 세팅</span>
+                <strong>30만원</strong>
+              </div>
+              <div class="price-card__price">
+                <span class="price-card__label">월 운영비</span>
+                <strong>13만원</strong>
+              </div>
+              <ul class="price-card__features">
+                <li>블로그 월 4회</li>
+                <li>SNS 월 4~6회</li>
+              </ul>
+            </div>
+            <div class="price-card">
+              <span class="price-card__tier">프리미엄</span>
+              <div class="price-card__price">
+                <span class="price-card__label">초기 세팅</span>
+                <strong>50만원</strong>
+              </div>
+              <div class="price-card__price">
+                <span class="price-card__label">월 운영비</span>
+                <strong>20만원</strong>
+              </div>
+              <ul class="price-card__features">
+                <li>블로그 월 10회+</li>
+                <li>SNS 월 12회+</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-block reveal">
+          <h3 class="pricing-block__title">홈페이지 제작</h3>
+          <div class="pricing-grid pricing-grid--3">
+            <div class="price-card">
+              <span class="price-card__tier">베이직</span>
+              <div class="price-card__price price-card__price--solo">
+                <strong>50만원~</strong>
+              </div>
+            </div>
+            <div class="price-card price-card--featured">
+              <span class="price-card__badge">추천</span>
+              <span class="price-card__tier">비즈니스</span>
+              <div class="price-card__price price-card__price--solo">
+                <strong>100만원~</strong>
+              </div>
+            </div>
+            <div class="price-card">
+              <span class="price-card__tier">프리미엄</span>
+              <div class="price-card__price price-card__price--solo">
+                <strong>별도 문의</strong>
+              </div>
+            </div>
+          </div>
+          <p class="pricing-note">※ 홈페이지 제작은 기능 및 페이지 수에 따라 최종 견적이 달라질 수 있습니다.</p>
+        </div>
+
+        <div class="pricing-block reveal">
+          <h3 class="pricing-block__title">AI 자동화</h3>
+          <div class="pricing-inquiry">
+            <p>맞춤형 AI 솔루션은 프로젝트 범위에 따라 견적을 안내해 드립니다.</p>
+            <a href="#contact" class="btn btn--primary">별도 문의</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="section section--light" id="portfolio">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">포트폴리오</span>
+          <h2 class="section__title">프로젝트 사례</h2>
+          <p class="section__desc">다양한 업종의 디지털 성장 사례를 소개합니다.</p>
+        </div>
+        <div class="portfolio-grid">
+          {% if portfolio %}
+          {% for item in portfolio %}
+          <article class="portfolio-card reveal">
+            {% if item.project_url %}
+            <a href="{{ item.project_url }}" target="_blank" rel="noopener" class="portfolio-card__link-wrap">
+            {% endif %}
+              <div class="portfolio-card__visual {% if item.image_url %}portfolio-card__visual--image{% else %}portfolio-card__visual--{{ (loop.index0 % 4) + 1 }}{% endif %}"
+                {% if item.image_url %}style="background-image: url('{{ item.image_url }}');"{% endif %}>
+              </div>
+              <div class="portfolio-card__body">
+                <h3 class="portfolio-card__title">{{ item.title }}</h3>
+                {% if item.description %}
+                <p class="portfolio-card__desc">{{ item.description }}</p>
+                {% endif %}
+                {% if item.project_url %}
+                <span class="portfolio-card__cta">프로젝트 보기 →</span>
+                {% endif %}
+              </div>
+            {% if item.project_url %}
+            </a>
+            {% endif %}
+          </article>
+          {% endfor %}
+          {% else %}
+          <div class="portfolio-empty reveal">
+            <p>등록된 프로젝트가 없습니다.</p>
+            <span>곧 새로운 사례가 업데이트됩니다.</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--dark" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <span class="section__label section__label--light">문의</span>
+            <h2 class="section__title section__title--light">프로젝트를 시작할 준비가 되셨나요?</h2>
+            <p class="section__desc section__desc--light">무료 상담을 통해 비즈니스에 최적화된 솔루션을 제안해 드립니다.</p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <span class="contact-detail__label">회사</span>
+                <strong>LFlux</strong>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail__label">대표</span>
+                <strong>김기범</strong>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail__label">전화</span>
+                <a href="tel:010-9155-6922">010-9155-6922</a>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail__label">이메일</span>
+                <a href="mailto:lfluxaioffice@gmail.com">lfluxaioffice@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form reveal" id="contactForm">
+            <div class="form-group">
+              <label for="name">이름</label>
+              <input type="text" id="name" name="name" placeholder="홍길동" required>
+            </div>
+            <div class="form-group">
+              <label for="email">이메일</label>
+              <input type="email" id="email" name="email" placeholder="이메일@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">연락처</label>
+              <input type="tel" id="phone" name="phone" placeholder="010-0000-0000">
+            </div>
+            <div class="form-group">
+              <label for="industry">업종</label>
+              <input type="text" id="industry" name="industry" placeholder="예: 학원, 쇼핑몰, IT 스타트업">
+            </div>
+            <div class="form-group">
+              <label for="budget">예산</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected>예산 범위를 선택해 주세요</option>
+                <option value="100만원 미만">100만원 미만</option>
+                <option value="100만원 ~ 300만원">100만원 ~ 300만원</option>
+                <option value="300만원 ~ 500만원">300만원 ~ 500만원</option>
+                <option value="500만원 ~ 1,000만원">500만원 ~ 1,000만원</option>
+                <option value="1,000만원 이상">1,000만원 이상</option>
+                <option value="협의 후 결정">협의 후 결정</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <span class="form-group__label" id="services-label">관심 서비스</span>
+              <div class="form-checkboxes" role="group" aria-labelledby="services-label">
+                <label class="form-checkbox">
+                  <input type="checkbox" name="service" value="홈페이지 제작">
+                  <span class="form-checkbox__box"></span>
+                  <span class="form-checkbox__text">홈페이지 제작</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="checkbox" name="service" value="온라인 홍보 운영">
+                  <span class="form-checkbox__box"></span>
+                  <span class="form-checkbox__text">온라인 홍보 운영</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="checkbox" name="service" value="AI 자동화">
+                  <span class="form-checkbox__box"></span>
+                  <span class="form-checkbox__text">AI 자동화</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="checkbox" name="service" value="기타 문의">
+                  <span class="form-checkbox__box"></span>
+                  <span class="form-checkbox__text">기타 문의</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">문의 내용</label>
+              <textarea id="message" name="message" rows="4" placeholder="프로젝트에 대해 알려주세요." required></textarea>
+            </div>
+            <p class="form-status" id="formStatus" role="alert" hidden></p>
+            <button type="submit" class="btn btn--primary btn--full" id="contactSubmit">무료 상담 신청</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="footer__logo">LFlux</a>
+        <p class="footer__tagline">AI · 웹 · 마케팅으로 비즈니스 성장을 자동화합니다.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>서비스</h4>
+          <ul>
+            <li><a href="#services">AI 자동화</a></li>
+            <li><a href="#services">홈페이지 제작</a></li>
+            <li><a href="#services">온라인 홍보</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>회사</h4>
+          <ul>
+            <li><a href="#pricing">요금 안내</a></li>
+            <li><a href="#portfolio">포트폴리오</a></li>
+            <li><a href="#contact">문의하기</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>연락처</h4>
+          <ul>
+            <li><a href="tel:010-9155-6922">010-9155-6922</a></li>
+            <li><a href="mailto:lfluxaioffice@gmail.com">lfluxaioffice@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; 2026 LFlux. 모든 권리 보유.</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', path='script.js') }}"></script>
+</body>
+</html>

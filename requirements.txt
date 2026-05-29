@@ -1,3 +1,9 @@
 fastapi>=0.115.0,<1.0.0
+python-multipart>=0.0.9,<1.0.0
 uvicorn[standard]>=0.32.0,<1.0.0
-pydantic-settings>=2.6.0,<3.0.0
+jinja2>=3.1.0,<4.0.0
+supabase>=2.8.0,<2.9.0
+postgrest>=0.16.0,<1.0.0
+python-dotenv>=1.0.0,<2.0.0
+email-validator>=2.0.0,<3.0.0
+itsdangerous>=2.1.0,<3.0.0

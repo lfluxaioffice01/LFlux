@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LFlux Admin | {{ form_title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', path='admin.css') }}">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <div class="admin-header__inner">
+      <a href="/admin" class="admin-header__logo">LFlux Admin</a>
+      <nav class="admin-nav">
+        <a href="/admin" class="admin-nav__link">대시보드</a>
+        <a href="/admin/inquiries" class="admin-nav__link">문의 목록</a>
+        <a href="/admin/portfolio" class="admin-nav__link admin-nav__link--active">포트폴리오</a>
+        <a href="/" class="admin-nav__link" target="_blank" rel="noopener">사이트 보기</a>
+        <a href="/admin/logout" class="admin-nav__link admin-nav__link--muted">로그아웃</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main container">
+    <div class="admin-page-head">
+      <a href="/admin/portfolio" class="admin-back">← 포트폴리오 목록</a>
+      <h1>{{ form_title }}</h1>
+    </div>
+
+    <section class="admin-panel admin-panel--form">
+      {% if error %}
+      <div class="admin-alert admin-alert--error" role="alert">{{ error }}</div>
+      {% endif %}
+
+      <form method="post" action="{{ form_action }}" class="admin-form">
+        <div class="admin-field">
+          <label for="title">제목 <span class="admin-required">*</span></label>
+          <input type="text" id="title" name="title" value="{{ item.title if item else '' }}" required>
+        </div>
+        <div class="admin-field">
+          <label for="description">설명</label>
+          <textarea id="description" name="description" rows="4">{{ item.description if item and item.description else '' }}</textarea>
+        </div>
+        <div class="admin-field">
+          <label for="image_url">이미지 URL</label>
+          <input type="url" id="image_url" name="image_url" value="{{ item.image_url if item and item.image_url else '' }}" placeholder="https://...">
+        </div>
+        <div class="admin-field">
+          <label for="project_url">프로젝트 URL</label>
+          <input type="url" id="project_url" name="project_url" value="{{ item.project_url if item and item.project_url else '' }}" placeholder="https://...">
+        </div>
+        <div class="admin-field admin-field--checkbox">
+          <label class="admin-checkbox">
+            <input type="checkbox" name="is_visible" value="on" {% if not item or item.is_visible %}checked{% endif %}>
+            <span>홈페이지에 표시</span>
+          </label>
+        </div>
+        <div class="admin-form__actions">
+          <button type="submit" class="admin-btn admin-btn--primary">저장</button>
+          <a href="/admin/portfolio" class="admin-btn admin-btn--ghost">취소</a>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
